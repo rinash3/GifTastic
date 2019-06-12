@@ -15,16 +15,15 @@
                 // Function for displaying  data
                 function renderButtons() {
 
-                    // Deleting the  prior to adding new buttons (this is necessary otherwise we will
+                    // Deleting buttons prior to adding new buttons (this is necessary otherwise we will
                     // have repeat buttons)
                     $("#buttons-view").empty();
 
                     // Looping through the array 
                     for (var i = 0; i < superheroes.length; i++) {
 
-                        // Then dynamicaly generating buttons for each superhero in the array This code
-                        // $("<button>") is all jQuery needs to create the start and end tag.
-                        // (<button></button>)
+                        // Then dynamicaly generating buttons for each superhero in the array 
+                       
                         var a = $("<button>");
                         // Adding a class of superHero to our button
                         a.addClass("superHero");
@@ -50,7 +49,7 @@
             var queryURL = "https:api.giphy.com/v1/gifs/search?q=" +
                 name + "&api_key=3dwh2EP3xMJbXZDMq6x5DEVIJ5aE4l7z&limit=10";
 
-            // Performing our AJAX GET request
+         
             $.ajax({
                     url: queryURL,
                     method: "GET"
@@ -63,7 +62,7 @@
                     // Looping over every result item
                     for (var i = 0; i < results.length; i++) {
 
-                        // Only taking action if the photo has an appropriate rating
+                      
                         if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
                             // Creating a div for the gif
                             var gifDiv = $("<div>");
@@ -95,7 +94,10 @@
                     }
                 });
             });
+
+            //click event on the gif to switch between still and animate
             $("#gifs-appear-here").on("click", ".gif", function(event){
+                //prevents submit
 	event.preventDefault();
 	// gets the current state of the clicked gif
     var state = $(this).attr("data-state");
