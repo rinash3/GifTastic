@@ -1,0 +1,23 @@
+button,
+div,
+form,
+input {
+    margin: 10px;
+}
+
+#buttons-view{
+    color:red;
+   
+}
+button,#add-hero{
+    background-color: aqua;
+}
+
+#heroes-form{
+    float:right;
+}
+img{
+
+    height: 150px;
+    width: 200px
+}
