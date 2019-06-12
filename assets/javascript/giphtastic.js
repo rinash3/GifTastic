@@ -12,21 +12,21 @@
                     var heroName = $(this).attr("data-name");
                   
                 }
-                // Function for displaying movie data
+                // Function for displaying  data
                 function renderButtons() {
 
-                    // Deleting the  prior to adding new movies (this is necessary otherwise we will
+                    // Deleting the  prior to adding new buttons (this is necessary otherwise we will
                     // have repeat buttons)
                     $("#buttons-view").empty();
 
-                    // Looping through the array of movies
+                    // Looping through the array 
                     for (var i = 0; i < superheroes.length; i++) {
 
-                        // Then dynamicaly generating buttons for each movie in the array This code
+                        // Then dynamicaly generating buttons for each superhero in the array This code
                         // $("<button>") is all jQuery needs to create the start and end tag.
                         // (<button></button>)
                         var a = $("<button>");
-                        // Adding a class of movie to our button
+                        // Adding a class of superHero to our button
                         a.addClass("superHero");
                         // Adding a data-attribute
                         a.attr("data-name", superheroes[i]);
@@ -77,15 +77,15 @@
                             // Creating an image tag
                             var superHeroImage = $("<img>");
 
-                            // Giving the image tag an src attribute of a proprty pulled off the
-                            // result item
+                            // Giving the image tag  src attribute of a proprty pulled off the
+                            // result item - getting the still images 
                             superHeroImage.attr("src", results[i].images.fixed_height_still.url);
                             superHeroImage.attr("data-still", results[i].images.fixed_height_still.url);
                             superHeroImage.attr("data-animate", results[i].images.fixed_height.url)
                             superHeroImage.attr("data-state", "still")
                             superHeroImage.addClass("gif");
 
-                            // Appending the paragraph and superHeroImage we created to the "gifDiv" div we created
+                            // Appending the paragraph and superHeroImage we created to the "gifDiv" div 
                             gifDiv.append(p);
                             gifDiv.append(superHeroImage);
 
@@ -98,7 +98,10 @@
             $("#gifs-appear-here").on("click", ".gif", function(event){
 	event.preventDefault();
 	// gets the current state of the clicked gif
-	var state = $(this).attr("data-state");
+    var state = $(this).attr("data-state");
+    //on click we check what is the state of the image
+    // if still we animate on click
+    // if animated we pause on click
 	if (state === "still") {
 	$(this).attr("src", $(this).attr("data-animate"));
 	$(this).attr("data-state", "animate");
@@ -112,11 +115,12 @@
 	event.preventDefault();
 
 	console.log("#add-hero");
-	// sets inputted value to newTopic 
+	// sets the value of input to new added super hero
 	var heroList = $("#hero-input").val().trim();
-	// new topic is added to the topics array 
+	// new added superhero is added to the array
     superheroes.push(heroList);
     console.log(superheroes);
+    //clear input field
     $("#hero-input").val('');
 	// call the function that creates the new button
 	renderButtons();
