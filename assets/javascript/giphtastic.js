@@ -62,8 +62,6 @@
                     // Looping over every result item
                     for (var i = 0; i < results.length; i++) {
 
-                      
-                        if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
                             // Creating a div for the gif
                             var gifDiv = $("<div>");
 
@@ -90,7 +88,7 @@
 
                             // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                             $("#gifs-appear-here").prepend(gifDiv);
-                        }
+                       
                     }
                 });
             });
