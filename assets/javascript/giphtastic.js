@@ -46,7 +46,7 @@
             var name = $(this).data("name");
 
             // Constructing a URL to search Giphy for the name of the superhero
-            var queryURL = "https:api.giphy.com/v1/gifs/search?q=" +
+            var queryURL = "https//:api.giphy.com/v1/gifs/search?q=" +
                 name + "&api_key=3dwh2EP3xMJbXZDMq6x5DEVIJ5aE4l7z&limit=10";
 
          
